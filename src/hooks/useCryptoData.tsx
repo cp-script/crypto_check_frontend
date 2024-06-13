@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
+import { HistoricalPrice } from '../components/historyTable';
+
+const uri = process.env.REACT_APP_SERVER_URI ? `${process.env.REACT_APP_SERVER_URI}` : "http://localhost:8000";
 
 interface PriceData {
   latest: number;
   average: number;
-  history: number[];
+  history: HistoricalPrice[];
   count: number;
 }
 
@@ -16,7 +19,7 @@ const useCryptoData = (symbol: string, minutes: number = 60) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:8000/price/${symbol}?minutes=${minutes}`);
+        const response = await fetch(`${uri}/price/${symbol}?minutes=${minutes}`);
         const result = await response.json();
         setData(result);
       } catch (e) {

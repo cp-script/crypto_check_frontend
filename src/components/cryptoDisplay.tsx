@@ -1,12 +1,14 @@
 import React from 'react';
 import useCryptoData from '../hooks/useCryptoData';
+import HistoryTable from './historyTable';
 
 interface CryptoDisplayProps {
   symbol: string;
+  minutes?: number;
 }
 
-const CryptoDisplay: React.FC<CryptoDisplayProps> = ({ symbol }) => {
-  const { data, loading, error } = useCryptoData(symbol);
+const CryptoDisplay: React.FC<CryptoDisplayProps> = ({ symbol, minutes }) => {
+  const { data, loading, error } = useCryptoData(symbol, minutes);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -16,7 +18,7 @@ const CryptoDisplay: React.FC<CryptoDisplayProps> = ({ symbol }) => {
       <h1>{symbol.toUpperCase()}</h1>
       <p>Latest Price: {data?.latest} EUR</p>
       <p>Average Price: {data?.average} EUR</p>
-      {/* Bonus: Add meaningful display of historic data here */}
+      <HistoryTable history={data?.history || []} />
     </div>
   );
 };

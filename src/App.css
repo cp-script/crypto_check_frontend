@@ -15,13 +15,29 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100px;
+  min-height: 200px;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-header .button-list {
+  display: flex;
+  gap: 20px;
+}
+
+.App-header .input-minute {
+  display: flex;
+  gap: 10px;
+}
+
+.table-history {
+  display: flex;
+  justify-content: center;
 }
 
 .App-link {
