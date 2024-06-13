@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<li>Config env: Locate the <code>.env.example</code> file in the client and server folders.
+Create a new file called <code>.env</code> in both the client and server folders.
+Copy over the contents of the <code>.env.example</code> files into the newly created <code>.env</code> files.
+Replace the values with your own configuration.</li>
 
 ## Available Scripts
 
