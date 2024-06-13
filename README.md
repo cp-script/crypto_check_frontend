@@ -1,4 +1,4 @@
-# If I have more time, I could implement styles very well and add chat for show history data.
+# If I have more time, I could implement styles very well and add chat to show history data.
 
 # Getting Started
 <li>Config env: Locate the <code>.env.example</code> file in the client and server folders.
